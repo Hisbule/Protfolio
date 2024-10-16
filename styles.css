@@ -1,0 +1,337 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('/BrolinkDemo-VGyMZ.otf') format('woff');
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #271730, #2b0e10);
+    color: #f7f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+/* Navbar links */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Corner name styling */
+.name-corner {
+    font-family: 'CustomFont', sans-serif;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    color: #d1dce3;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(139, 49, 49, 0.8), 0 0 20px rgba(132, 74, 74, 0.7);
+}
+
+/* Container and sections */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.heading {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgb(43, 14, 16);
+}
+
+.sub-heading {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    opacity: 0.9;
+    max-width: 400px;
+}
+
+/* Neon button styling */
+.neon-button {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 12px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.neon-button:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Code block styling */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.profile-picture {
+    margin-bottom: 20px;
+}
+
+.portfolio-img {
+    width: 500px;
+    height: auto;
+    border-radius: 50%;
+    border: 0px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for tablet and mobile devices */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        text-align: center; /* Center everything for mobile */
+    }
+
+    .left-section, .right-section {
+        padding: 0;
+        width: 100%;
+        text-align: center; /* Center text in both sections */
+    }
+
+    .heading {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 30px; /* Push heading a little down */
+    }
+
+    .sub-heading {
+        font-size: 1.2rem;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Add more space between sub-heading */
+    }
+
+    .neon-button {
+        margin: 20px auto; /* Center button */
+    }
+
+    .portfolio-img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .devices {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .device {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Mobile-specific navbar styles */
+    .navbar {
+        top: 0;
+        width: 100%;
+        left: 0;
+        transform: none;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    /* Hide links initially on mobile */
+    .navbar a {
+        display: none;
+    }
+
+    /* Toggle button for mobile navbar */
+    .navbar-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .navbar.active a {
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+/* Hide the toggle button on larger screens (desktop) */
+@media (min-width: 769px) {
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+
+/* About section with transparent background */
+.about-section {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Set background to transparent */
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* About image and social icons */
+.about-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transform: translateX(-50px); /* Shift the image a bit to the right */
+}
+
+.about-image-container {
+    position: relative;
+}
+
+.about-profile-img {
+    width: 400px; /* Increased width */
+    height: 400px; /* Increased height */
+    border-radius: 50%;
+    border: 5px solid #f7f5f5;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+/* Social icons below the profile image in a circular arrangement */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    bottom: -50px; /* Move the icons below the image */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Right section for the "About Me" text */
+.about-right {
+    flex: 2;
+    padding-left: 60px; /* Shift the text more to the right */
+    text-align: left;
+}
+
+.about-right h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.about-right p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-right {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+
+    .about-profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .social-icons {
+        bottom: -40px; /* Adjust icon position for smaller screens */
+    }
+
+    .about-right p {
+        font-size: 1.2rem;
+    }
+}
